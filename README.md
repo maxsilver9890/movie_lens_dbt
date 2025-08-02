@@ -39,6 +39,8 @@ netflixdbt/
 | └── requirements.txt
 ├── README.md
 
+<pre> netflixdbt/ ├── netflix/ │ ├── models/ # DBT models │ ├── app.py # Streamlit dashboard │ └── queries.py # SQL queries used by Streamlit ├── requirements.txt # Python dependencies └── README.md # Project overview </pre>
+
 
 ## ⚙️ How to Run Locally
 
