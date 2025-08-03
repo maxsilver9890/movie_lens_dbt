@@ -34,15 +34,16 @@ Each section is interactive and includes:
 ├── netflix/                  # Main project folder
 │   ├── models/               # dbt models (SQL transformations)
 │   │   ├── staging/          # Staging models
-│   │   ├── marts/            # Business logic (facts, dims)
-│   │   └── example/          # Example dbt models
-│   ├── analyses/             # dbt analyses (optional)
+│   │   ├── marts/            # Business logic 
+│   │   └── dim/              # Dimension dbt models
+│   │   └── fct/              # Fact dbt models
+│   ├── analyses/             # dbt analyses 
 │   ├── tests/                # dbt tests (custom or generic)
-│   ├── snapshots/            # Snapshot models (if used)
+│   ├── snapshots/            # Snapshot models 
 │   ├── seeds/                # Raw CSV seed files
 │   ├── macros/               # Reusable dbt macros
-│   ├── app.py                # Streamlit dashboard
-│   ├── queries.py            # SQL query strings for app
+│   ├── app1.py               # Streamlit dashboard
+│   ├── queries1.py           # SQL query strings for app
 │   └── .env                  # Environment variables (credentials, etc.)
 │
 ├── dbt_packages/             # Auto-managed dbt dependencies
