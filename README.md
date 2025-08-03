@@ -28,11 +28,31 @@ Each section is interactive and includes:
 | 🐍 Python + pandas                                    | Query handling and plotting             |
 
 ---
-
+```
 ## 📁 Project Structure
-<pre> 📦 <b>movie_lens_dbt</b> ├── <b>netflix/</b> # Main project folder │ ├── <b>models/</b> # dbt models (SQL transformations) │ │ ├── <b>staging/</b> # Staging models │ │ ├── <b>marts/</b> # Business logic (facts, dims) │ │ └── <b>example/</b> # Example dbt models │ ├── <b>analyses/</b> # dbt analyses (optional) │ ├── <b>tests/</b> # dbt tests (custom or generic) │ ├── <b>snapshots/</b> # Snapshot models (if used) │ ├── <b>seeds/</b> # Raw CSV seed files │ ├── <b>macros/</b> # Reusable dbt macros │ ├── <b>app.py</b> # Streamlit dashboard │ ├── <b>queries.py</b> # SQL query strings for app │ └── <b>.env</b> (🔒 ignored) # Environment variables (credentials, etc.) │ ├── <b>dbt_packages/</b> # Auto-managed dbt dependencies ├── <b>target/</b> # dbt build artifacts (ignored) ├── <b>logs/</b> # Logs (ignored) ├── <b>.gitignore</b> ├── <b>README.md</b> └── <b>requirements.txt</b> # Python packages for Streamlit app </pre>
-
-
+📦 movie_lens_dbt
+├── netflix/                  # Main project folder
+│   ├── models/               # dbt models (SQL transformations)
+│   │   ├── staging/          # Staging models
+│   │   ├── marts/            # Business logic 
+│   │   └── dim/              # Dimension dbt models
+│   │   └── fct/              # Fact dbt models
+│   ├── analyses/             # dbt analyses 
+│   ├── tests/                # dbt tests (custom or generic)
+│   ├── snapshots/            # Snapshot models 
+│   ├── seeds/                # Raw CSV seed files
+│   ├── macros/               # Reusable dbt macros
+│   ├── app1.py               # Streamlit dashboard
+│   ├── queries1.py           # SQL query strings for app
+│   └── .env                  # Environment variables (credentials, etc.)
+│
+├── dbt_packages/             # Auto-managed dbt dependencies
+├── target/                   # dbt build artifacts (ignored)
+├── logs/                     # Logs (ignored)
+├── .gitignore
+├── README.md
+└── requirements.txt          # Python packages for Streamlit app
+```
 
 
 ## ⚙️ How to Run Locally
@@ -56,11 +76,26 @@ Each section is interactive and includes:
 5. Launch Streamlit app
     streamlit run app.py
 
-Useful Resources
+
+# 🚀 Project Summary: MovieLens Analytics with Snowflake, dbt & Streamlit
+
+This project showcases a full-stack modern data workflow using **Snowflake**, **dbt**, and **Streamlit**, applied to the [MovieLens dataset](https://grouplens.org/datasets/movielens/). It covers everything from data modeling and testing to documentation and dashboarding.
+---
+### 🛠️ Workflow Overview
+```
+
+  A[📦 Raw Data in Snowflake] --> B[🔧 dbt Models & Transformations]
+  B --> C[📄 dbt Docs & Testing]
+  C --> D[📊 Streamlit Dashboard]
+```
+
+Useful Resources:
 📘 MovieLens Dataset : https://grouplens.org/datasets/movielens/
 🧊 Snowflake Docs : https://docs.snowflake.com/
 🧮 dbt Docs : https://docs.getdbt.com/
 💡 Streamlit Docs : https://docs.streamlit.io/
+
+
 
 👨‍💻 Author
 Prateek Saxena
