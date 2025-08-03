@@ -83,13 +83,13 @@ This project showcases a full-stack modern data workflow using **Snowflake**, **
 ---
 ### 🛠️ Workflow Overview
 ```
-flowchart TD
+
   A[📦 Raw Data in Snowflake] --> B[🔧 dbt Models & Transformations]
   B --> C[📄 dbt Docs & Testing]
   C --> D[📊 Streamlit Dashboard]
 ```
 
-Useful Resources
+Useful Resources:
 📘 MovieLens Dataset : https://grouplens.org/datasets/movielens/
 🧊 Snowflake Docs : https://docs.snowflake.com/
 🧮 dbt Docs : https://docs.getdbt.com/
