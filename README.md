@@ -82,12 +82,12 @@ Each section is interactive and includes:
 This project showcases a full-stack modern data workflow using **Snowflake**, **dbt**, and **Streamlit**, applied to the [MovieLens dataset](https://grouplens.org/datasets/movielens/). It covers everything from data modeling and testing to documentation and dashboarding.
 ---
 ### 🛠️ Workflow Overview
-```mermaid
+```
 flowchart TD
   A[📦 Raw Data in Snowflake] --> B[🔧 dbt Models & Transformations]
   B --> C[📄 dbt Docs & Testing]
   C --> D[📊 Streamlit Dashboard]
-
+```
 
 Useful Resources
 📘 MovieLens Dataset : https://grouplens.org/datasets/movielens/
