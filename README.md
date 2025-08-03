@@ -28,7 +28,7 @@ Each section is interactive and includes:
 | 🐍 Python + pandas                                    | Query handling and plotting             |
 
 ---
-
+```
 ## 📁 Project Structure
 📦 movie_lens_dbt
 ├── netflix/                  # Main project folder
@@ -51,7 +51,7 @@ Each section is interactive and includes:
 ├── .gitignore
 ├── README.md
 └── requirements.txt          # Python packages for Streamlit app
-
+```
 
 
 ## ⚙️ How to Run Locally
