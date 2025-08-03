@@ -30,8 +30,27 @@ Each section is interactive and includes:
 ---
 
 ## 📁 Project Structure
-<pre> 📦 <b>movie_lens_dbt</b> ├── <b>netflix/</b> # Main project folder │ ├── <b>models/</b> # dbt models (SQL transformations) │ │ ├── <b>staging/</b> # Staging models │ │ ├── <b>marts/</b> # Business logic (facts, dims) │ │ └── <b>example/</b> # Example dbt models │ ├── <b>analyses/</b> # dbt analyses (optional) │ ├── <b>tests/</b> # dbt tests (custom or generic) │ ├── <b>snapshots/</b> # Snapshot models (if used) │ ├── <b>seeds/</b> # Raw CSV seed files │ ├── <b>macros/</b> # Reusable dbt macros │ ├── <b>app.py</b> # Streamlit dashboard │ ├── <b>queries.py</b> # SQL query strings for app │ └── <b>.env</b> (🔒 ignored) # Environment variables (credentials, etc.) │ ├── <b>dbt_packages/</b> # Auto-managed dbt dependencies ├── <b>target/</b> # dbt build artifacts (ignored) ├── <b>logs/</b> # Logs (ignored) ├── <b>.gitignore</b> ├── <b>README.md</b> └── <b>requirements.txt</b> # Python packages for Streamlit app </pre>
-
+📦 movie_lens_dbt
+├── netflix/                  # Main project folder
+│   ├── models/               # dbt models (SQL transformations)
+│   │   ├── staging/          # Staging models
+│   │   ├── marts/            # Business logic (facts, dims)
+│   │   └── example/          # Example dbt models
+│   ├── analyses/             # dbt analyses (optional)
+│   ├── tests/                # dbt tests (custom or generic)
+│   ├── snapshots/            # Snapshot models (if used)
+│   ├── seeds/                # Raw CSV seed files
+│   ├── macros/               # Reusable dbt macros
+│   ├── app.py                # Streamlit dashboard
+│   ├── queries.py            # SQL query strings for app
+│   └── .env                  # Environment variables (credentials, etc.)
+│
+├── dbt_packages/             # Auto-managed dbt dependencies
+├── target/                   # dbt build artifacts (ignored)
+├── logs/                     # Logs (ignored)
+├── .gitignore
+├── README.md
+└── requirements.txt          # Python packages for Streamlit app
 
 
 
