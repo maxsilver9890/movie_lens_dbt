@@ -30,16 +30,9 @@ Each section is interactive and includes:
 ---
 
 ## 📁 Project Structure
-netflixdbt/
-│
-├── netflix/
-│ ├── models/ # DBT models
-│ ├── app.py # Streamlit dashboard
-│ └── queries.py # SQL queries
-| └── requirements.txt
-├── README.md
+<pre> 📦 <b>movie_lens_dbt</b> ├── <b>netflix/</b> # Main project folder │ ├── <b>models/</b> # dbt models (SQL transformations) │ │ ├── <b>staging/</b> # Staging models │ │ ├── <b>marts/</b> # Business logic (facts, dims) │ │ └── <b>example/</b> # Example dbt models │ ├── <b>analyses/</b> # dbt analyses (optional) │ ├── <b>tests/</b> # dbt tests (custom or generic) │ ├── <b>snapshots/</b> # Snapshot models (if used) │ ├── <b>seeds/</b> # Raw CSV seed files │ ├── <b>macros/</b> # Reusable dbt macros │ ├── <b>app.py</b> # Streamlit dashboard │ ├── <b>queries.py</b> # SQL query strings for app │ └── <b>.env</b> (🔒 ignored) # Environment variables (credentials, etc.) │ ├── <b>dbt_packages/</b> # Auto-managed dbt dependencies ├── <b>target/</b> # dbt build artifacts (ignored) ├── <b>logs/</b> # Logs (ignored) ├── <b>.gitignore</b> ├── <b>README.md</b> └── <b>requirements.txt</b> # Python packages for Streamlit app </pre>
 
-<pre> netflixdbt/ ├── netflix/ │ ├── models/ # DBT models │ ├── app.py # Streamlit dashboard │ └── queries.py # SQL queries used by Streamlit ├── requirements.txt # Python dependencies └── README.md # Project overview </pre>
+
 
 
 ## ⚙️ How to Run Locally
