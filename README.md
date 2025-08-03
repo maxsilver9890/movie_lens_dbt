@@ -76,11 +76,25 @@ Each section is interactive and includes:
 5. Launch Streamlit app
     streamlit run app.py
 
+
+# 🚀 Project Summary: MovieLens Analytics with Snowflake, dbt & Streamlit
+
+This project showcases a full-stack modern data workflow using **Snowflake**, **dbt**, and **Streamlit**, applied to the [MovieLens dataset](https://grouplens.org/datasets/movielens/). It covers everything from data modeling and testing to documentation and dashboarding.
+---
+### 🛠️ Workflow Overview
+```mermaid
+flowchart TD
+  A[📦 Raw Data in Snowflake] --> B[🔧 dbt Models & Transformations]
+  B --> C[📄 dbt Docs & Testing]
+  C --> D[📊 Streamlit Dashboard]
+```
 Useful Resources
 📘 MovieLens Dataset : https://grouplens.org/datasets/movielens/
 🧊 Snowflake Docs : https://docs.snowflake.com/
 🧮 dbt Docs : https://docs.getdbt.com/
 💡 Streamlit Docs : https://docs.streamlit.io/
+
+
 
 👨‍💻 Author
 Prateek Saxena
