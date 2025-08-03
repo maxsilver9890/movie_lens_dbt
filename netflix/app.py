@@ -9,20 +9,25 @@ from queries import (
     rating_over_the_years,
     tag_relevance_analysis
 )
-
+#Credentials
+from dotenv import load_dotenv
+import os
+load_dotenv()
 # 🚀 Snowflake connection
 @st.cache_resource
 def get_connection():
     return snowflake.connector.connect(
-        user='maxsilver9890',
-        password='wT8kiuNbHtUTBNf',
-        account='PFOBQAM-IW03734',
+        user=os.getenv("SNOWFLAKE_USER"),
+        password=os.getenv("SNOWFLAKE_PASSWORD"),
+        account=os.getenv("SNOWFLAKE_ACCOUNT"),
         warehouse='COMPUTE_WH',
         database='MOVIELENS',
         schema='DEV'
     )
 
 conn = get_connection()
+if conn is None:
+    st.stop()
 
 # 🔍 Run query and return DataFrame
 def run_query(query):

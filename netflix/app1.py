@@ -15,6 +15,7 @@ from queries1 import (
     genre_analysis # New import
 )
 
+
 # --- Page Configuration ---
 st.set_page_config(
     page_title="MovieLens Pro Dashboard",
@@ -100,15 +101,20 @@ def load_css():
     """, unsafe_allow_html=True)
 
 load_css()
+#-----------------------------------------------
+#Credentials
+from dotenv import load_dotenv
+import os
+load_dotenv()
 
 # --- Snowflake Connection ---
 @st.cache_resource
 def get_connection():
     try:
         return snowflake.connector.connect(
-            user='maxsilver9890',
-            password='wT8kiuNbHtUTBNf',
-            account='PFOBQAM-IW03734',
+            user=os.getenv("SNOWFLAKE_USER"),
+            password=os.getenv("SNOWFLAKE_PASSWORD"),
+            account=os.getenv("SNOWFLAKE_ACCOUNT"),
             warehouse='COMPUTE_WH',
             database='MOVIELENS',
             schema='DEV'
@@ -118,6 +124,9 @@ def get_connection():
         return None
 
 conn = get_connection()
+if conn is None:
+    st.stop()
+
 
 # --- Data Fetching ---
 @st.cache_data(ttl=600)
