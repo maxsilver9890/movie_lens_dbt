@@ -108,7 +108,7 @@ load_css()
 # load_dotenv()
 
 # --- Snowflake Connection ---
-@st.cache_resource
+# @st.cache_resource
 # def get_connection():
 #     try:
 #         return snowflake.connector.connect(
