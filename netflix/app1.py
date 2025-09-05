@@ -125,7 +125,7 @@ load_css()
 #         return None
 
 # --- Snowflake Connection ---
-@st.cache_resource
+# @st.cache_resource
 def get_connection():
     """Establishes a connection to Snowflake using a private key from Streamlit secrets."""
     try:
