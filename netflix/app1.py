@@ -5,7 +5,7 @@ import pandas as pd
 import snowflake.connector
 import plotly.express as px
 import time # New import for animation
-
+from cryptography.hazmat.primitives import serialization
 # Import queries from your file
 from queries1 import (
     top_rated_movies_summary,
@@ -103,21 +103,55 @@ def load_css():
 load_css()
 #-----------------------------------------------
 #Credentials
-from dotenv import load_dotenv
-import os
-load_dotenv()
+# from dotenv import load_dotenv
+# import os
+# load_dotenv()
+
+# --- Snowflake Connection ---
+@st.cache_resource
+# def get_connection():
+#     try:
+#         return snowflake.connector.connect(
+#             user=os.getenv("SNOWFLAKE_USER"),
+#             password=os.getenv("SNOWFLAKE_PASSWORD"),
+#             account=os.getenv("SNOWFLAKE_ACCOUNT"),
+#             warehouse='COMPUTE_WH',
+#             database='MOVIELENS',
+#             schema='DEV'
+#         )
+#     except Exception as e:
+#         st.error(f"❄️ Snowflake connection failed. Please check your credentials and network. Error: {e}")
+#         return None
 
 # --- Snowflake Connection ---
 @st.cache_resource
 def get_connection():
+    """Establishes a connection to Snowflake using a private key from Streamlit secrets."""
     try:
+        # Load encrypted private key from Streamlit secrets
+        p_key_bytes = st.secrets.snowflake.private_key.encode('utf-8')
+        
+        # Decrypt the private key
+        private_key = serialization.load_pem_private_key(
+            p_key_bytes,
+            password=st.secrets.snowflake.private_key_passphrase.encode('utf-8')
+        )
+        
+        # Get the private key in PKCS8 format for the connector
+        pkcs8_private_key = private_key.private_bytes(
+            encoding=serialization.Encoding.DER,
+            format=serialization.PrivateFormat.PKCS8,
+            encryption_algorithm=serialization.NoEncryption()
+        )
+        
+        # Establish the connection using st.secrets
         return snowflake.connector.connect(
-            user=os.getenv("SNOWFLAKE_USER"),
-            password=os.getenv("SNOWFLAKE_PASSWORD"),
-            account=os.getenv("SNOWFLAKE_ACCOUNT"),
-            warehouse='COMPUTE_WH',
-            database='MOVIELENS',
-            schema='DEV'
+            user=st.secrets.snowflake.user,
+            account=st.secrets.snowflake.account,
+            warehouse=st.secrets.snowflake.warehouse,
+            database=st.secrets.snowflake.database,
+            schema=st.secrets.snowflake.schema,
+            private_key=pkcs8_private_key  # Use the decrypted private key
         )
     except Exception as e:
         st.error(f"❄️ Snowflake connection failed. Please check your credentials and network. Error: {e}")
