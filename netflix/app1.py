@@ -15,22 +15,6 @@ from queries1 import (
     genre_analysis # New import
 )
 
-st.title("🕵️ Secrets Inspector")
-
-# Check if the 'snowflake' section exists
-if hasattr(st.secrets, "snowflake"):
-    st.success("✅ 'snowflake' section was found in your secrets!")
-    st.info("Check the keys below to ensure they are all correct.")
-    # Display the keys found within the [snowflake] section
-    st.write(st.secrets.snowflake.keys())
-else:
-    st.error("❌ The 'snowflake' section was NOT found.")
-    st.warning("Below are all the secrets the app can see. Check for typos in the section header (e.g., 'snowflak' instead of 'snowflake').")
-    # Display all available secrets to find the typo
-    st.write(st.secrets.to_dict())
-
-st.stop() # Stop the rest of the app from running
-# --- END OF DEBUGGING CODE ---
 
 
 # --- Page Configuration ---
